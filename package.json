@@ -40,7 +40,7 @@
     "*": [
       "prettier --write --cache --ignore-unknown"
     ],
-    "packages/**/*": [
+    "packages/**/*.{js,ts,jsx,tsx}": [
       "eslint --cache --fix"
     ]
   }
