@@ -1,0 +1,47 @@
+{
+  "name": "ytu-react-boiler",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=16.14.2"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "npx simple-git-hooks",
+    "build": "pnpm -r build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.23",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "@vitejs/plugin-react": "^2.1.0",
+    "eslint": "8.22.0",
+    "eslint-define-config": "^1.7.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "nano-staged": "^0.8.0",
+    "prettier": "^2.7.1",
+    "shared": "workspace:*",
+    "simple-git-hooks": "^2.8.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "./node_modules/.bin/nano-staged"
+  },
+  "nano-staged": {
+    "*": [
+      "prettier --write --cache --ignore-unknown"
+    ],
+    "packages/**/*": [
+      "eslint --cache --fix"
+    ]
+  }
+}
