@@ -6,6 +6,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "../../shared"],
+  "include": ["src", "../../shared", "vite.config.*"],
   "references": [{ "path": "../../config/tsconfig.node.json" }]
 }

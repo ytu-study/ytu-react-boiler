@@ -1,4 +1,5 @@
-import { mergeConfig, defineConfig } from 'vite';
+import { fileURLToPath } from 'url';
+import { defineConfig, mergeConfig } from 'vite';
 import baseConfig from '../../config/vite.base.config';
 
 export default mergeConfig(
@@ -7,7 +8,7 @@ export default mergeConfig(
     root: __dirname,
     resolve: {
       alias: {
-        '@': 'src',
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
       },
     },
   }),
