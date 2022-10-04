@@ -1,6 +1,6 @@
-import { Navigate, useRoutes } from "react-router-dom";
-import HomePage from "../pages";
-import LazyPage from "../pages/lazy";
+import { Navigate, useRoutes } from 'react-router-dom';
+import HomePage from '@/pages';
+import LazyPage from '@/pages/lazy';
 
 interface RouterOptions {
   defaultPath?: string;
@@ -8,18 +8,18 @@ interface RouterOptions {
 
 const setRoutes = ({ defaultPath }: RouterOptions) => [
   {
-    path: "/",
+    path: '/',
     title: "Taehyung's Boiler Plate",
     element: defaultPath ? <Navigate replace to={defaultPath} /> : <HomePage />,
   },
   {
-    path: "/lazy",
-    title: "Suspense & Lazy Component Test",
+    path: '/lazy',
+    title: 'Suspense & Lazy Component Test',
     element: <LazyPage />,
   },
 ];
 
-const Router = (options: RouterOptions) => {
+const Router = (options: RouterOptions): JSX.Element => {
   return <div>{useRoutes(setRoutes(options))}</div>;
 };
 
