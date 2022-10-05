@@ -55,9 +55,11 @@ importers:
       autoprefixer: ^10.4.12
       postcss: ^8.4.17
       react-router-dom: ^6.4.1
+      react-router-title: ^6.0.1
       tailwindcss: ^3.1.8
     dependencies:
       react-router-dom: 6.4.1
+      react-router-title: 6.0.1
     devDependencies:
       autoprefixer: 10.4.12_postcss@8.4.17
       postcss: 8.4.17
@@ -2288,6 +2290,12 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-router: 6.4.1_react@18.2.0
+    dev: false
+
+  /react-router-title/6.0.1:
+    resolution: {integrity: sha512-lKUyk8Cd+dPAU34MfYZRjSjVSlX3scUzx3mwt3/i0TWMAtdTEuiuRsW4t5oozWO7AViZ/IWaQQx6+/mW+s69WQ==}
+    peerDependencies:
+      react-router: '>=6'
     dev: false
 
   /react-router/6.4.1:
