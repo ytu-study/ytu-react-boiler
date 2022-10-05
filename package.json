@@ -45,5 +45,8 @@
     "packages/**/*.{js,ts,jsx,tsx}": [
       "eslint --cache --fix"
     ]
+  },
+  "msw": {
+    "workerDirectory": "packages/yeaji/public"
   }
 }
