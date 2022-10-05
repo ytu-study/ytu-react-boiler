@@ -28,7 +28,7 @@ export const setRoutes = ({ defaultPath }: RouterOptions): Array<RouteType> => [
 
 const Router = (options: RouterOptions): JSX.Element => {
   return (
-    <div>
+    <div className="max-w-[1280px] m-auto min-h-[100vh] p">
       <RouterTitle pageTitle="태형의 페이지" routesConfig={setRoutes(options)} />
       {useRoutes(setRoutes(options))}
     </div>
