@@ -1,21 +1,18 @@
-import React, { Suspense, lazy, type LazyExoticComponent, type FunctionComponent } from 'react';
-import getLazyLoad from '@/utils/getLazyLoad';
-import CommonFallback from '@/components/lazy/CommonFallback';
 import TransitionExample from '@/components/lazy/TransitionExample';
-
-const LazyChild = getLazyLoad('lazy/LazyChild', 1000);
-const LazyChild2 = getLazyLoad('lazy/LazyChild', 3000);
+import UXContainer from '@/components/lazy/UXContainer';
+import SuspenseChild from '@/components/lazy/SuspenseChild';
 
 export default function LazyPage(): JSX.Element {
   return (
-    <div className="flex flex-wrap gap-[20px] py-[40px]">
-      <Suspense fallback={<CommonFallback />}>
-        <LazyChild />
-      </Suspense>
-      <Suspense fallback={<CommonFallback color="bg-blue-500" />}>
-        <LazyChild2 />
-      </Suspense>
+    <div className="flex flex-col gap-[20px] py-[40px] [&>*]:w-full [&>*]:h-[200px]">
+      <div className="flex gap-[20px]">
+        <SuspenseChild />
+        <SuspenseChild width="400px" color="blue" time={1500}>
+          <SuspenseChild color="green" time={2000} />
+        </SuspenseChild>
+      </div>
       <TransitionExample />
+      <UXContainer />
     </div>
   );
 }
