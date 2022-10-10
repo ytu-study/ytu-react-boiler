@@ -1,3 +1,7 @@
-export default function SuspenseBaby(): JSX.Element {
-  return <div className="flex justify-center items-center w-full h-full">SuspenseInner</div>;
+interface Props {
+  time: number;
+}
+
+export default function SuspenseBaby({ time }: Props): JSX.Element {
+  return <div className="text-center w-[196px] h-full">Content({time / 1000}s)</div>;
 }

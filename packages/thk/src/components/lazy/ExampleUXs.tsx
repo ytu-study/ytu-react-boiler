@@ -1,9 +1,9 @@
 import SuspenseUX from './SuspenseUX';
 import TransitionUX from './TransitionUX';
 
-export default function UXContainer(): JSX.Element {
+export default function ExampleUXs(): JSX.Element {
   return (
-    <div className="flex justify-between gap-[20px] w-full border-dark-200 border-2">
+    <div className="flex justify-between gap-[20px]">
       <SuspenseUX />
       <TransitionUX />
     </div>

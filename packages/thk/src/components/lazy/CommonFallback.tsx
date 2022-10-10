@@ -4,6 +4,6 @@ interface PropsType {
   color?: string;
 }
 
-export default function CommonFallback({ color = 'red' }: PropsType): JSX.Element {
-  return <div className={classnames(`w-full h-full font-bold`, { [`bg-${color}-500`]: true })}>Loading..</div>;
+export default function CommonFallback({ color = 'bg-red-500' }: PropsType): JSX.Element {
+  return <div className={classnames(`w-full h-full font-bold`, color)}>Loading..</div>;
 }

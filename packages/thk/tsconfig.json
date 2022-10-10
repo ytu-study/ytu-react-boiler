@@ -4,7 +4,8 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["react/experimental"]
   },
   "include": ["src", "../../shared", "vite.config.*"],
   "references": [{ "path": "../../config/tsconfig.node.json" }]
