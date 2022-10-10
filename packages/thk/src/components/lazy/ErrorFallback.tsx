@@ -1,8 +1,10 @@
 import type { FallbackProps } from 'react-error-boundary';
 
-interface Props extends FallbackProps {
+interface CustomProps {
   handleReset: () => void;
 }
+
+type Props = CustomProps & FallbackProps;
 
 export default function ErrorFallback({ error, resetErrorBoundary, handleReset }: Props): JSX.Element {
   const onClickReset = () => {
