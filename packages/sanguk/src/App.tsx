@@ -1,6 +1,7 @@
 import { RouterProvider } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import router from '@/router';
+import './styles/theme.css';
 import './styles/reset.css';
 
 export default function App(): JSX.Element {
