@@ -19,8 +19,8 @@ export function fetchProfileData(userId: number): ProfileDataType {
 
   return {
     userId,
-    user: wrapPromise(userPromise),
-    posts: wrapPromise(postsPromise),
+    user: wrapPromise<UserType>(userPromise),
+    posts: wrapPromise<Array<PostType>>(postsPromise),
   };
 }
 
