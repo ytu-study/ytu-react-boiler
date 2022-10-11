@@ -54,12 +54,14 @@ importers:
       '@vanilla-extract/css-utils': ^0.1.2
       '@vanilla-extract/sprinkles': ^1.5.0
       '@vanilla-extract/vite-plugin': ^3.6.1
+      classnames: ^2.3.2
       lodash-es: ^4.17.21
       recoil: ^0.7.5
     dependencies:
       '@vanilla-extract/css': 1.9.1
       '@vanilla-extract/css-utils': 0.1.2
       '@vanilla-extract/sprinkles': 1.5.0_@vanilla-extract+css@1.9.1
+      classnames: 2.3.2
       lodash-es: 4.17.21
       recoil: 0.7.5_react@18.2.0
     devDependencies:
@@ -1646,6 +1648,10 @@ packages:
     resolution: {integrity: sha512-p3KULyQg4S7NIHixdwbGX+nFHkoBiA4YQmyWtjb8XngSKV124nJmRysgAeujbUVb15vh+RvFUfCPqU7rXk+hZg==}
     engines: {node: '>=6.0'}
     dev: true
+
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
 
   /cli-cursor/3.1.0:
     resolution: {integrity: sha512-I/zHAwsKf9FqGoXM4WWRACob9+SNukZTd94DWF57E4toouRulbCxcUh6RKUEOQlYTHJnzkPMySvPNaaSLNfLZw==}
