@@ -8,6 +8,11 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "styled-components": "^5.3.6"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.26",
+    "react-dom": "^18.2.0"
+  }
 }
