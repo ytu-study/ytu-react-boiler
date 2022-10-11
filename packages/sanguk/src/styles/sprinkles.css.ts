@@ -1,10 +1,10 @@
-import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles';
 import { style } from '@vanilla-extract/css';
-import { color } from 'src/styles/color.css';
-import { fontFamily, fontWeight, lineHeight, fontSize, fontStyle } from './typography.css';
+import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
+import { borderRadius, borderSize, shadow } from './border.css';
 import { size, space } from './size.css';
-import { borderSize, borderRadius, shadow } from './border.css';
-import { overflow, width, height, zIndex, order, textAlign } from './vars.css';
+import { fontFamily, fontSize, fontStyle, fontWeight, lineHeight } from './typography.css';
+import { height, order, overflow, textAlign, width, zIndex } from './vars.css';
+import { color } from '@/styles/baseColor.css';
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -71,6 +71,7 @@ const responsiveProperties = defineProperties({
     },
     visibility: ['visible', 'hidden'],
     zIndex,
+    cursor: ['default', 'pointer', 'not-allowed', 'text'],
   },
   shorthands: {
     padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
