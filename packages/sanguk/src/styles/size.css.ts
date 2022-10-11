@@ -34,11 +34,11 @@ export const space = {
   '72': '18rem',
   '80': '20rem',
   '96': '24rem',
+  auto: 'auto',
 };
 
 export const size = {
   ...space,
-  auto: 'auto',
   '1/2': '50%',
   '1/3': '33.333333%',
   '2/3': '66.666667%',
