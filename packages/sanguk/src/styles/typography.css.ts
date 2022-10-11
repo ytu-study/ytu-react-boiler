@@ -2,7 +2,7 @@ export const fontFamily = {
   'sans-serif': 'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;',
   serif: 'ui-serif, serif;',
   mono: 'Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;',
-} as const;
+};
 
 export const fontWeight = {
   thin: 100,
@@ -14,12 +14,12 @@ export const fontWeight = {
   bold: 700,
   extrabold: 800,
   black: 900,
-} as const;
+};
 
 export const fontStyle = {
   italic: 'italic',
   'not-italic': 'normal',
-} as const;
+};
 
 export const lineHeight = {
   /** 4px */
@@ -48,7 +48,7 @@ export const lineHeight = {
   normal: '1.5',
   relaxed: '1.625',
   loose: '2',
-} as const;
+};
 
 export const fontSize = {
   /** 12px */
@@ -77,4 +77,4 @@ export const fontSize = {
   '8xl': '6rem',
   /** 128px */
   '9xl': '8rem',
-} as const;
+};

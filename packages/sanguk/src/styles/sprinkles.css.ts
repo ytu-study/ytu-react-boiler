@@ -9,8 +9,8 @@ import { overflow, width, height, zIndex, order, textAlign } from './vars.css';
 const responsiveProperties = defineProperties({
   conditions: {
     mobile: {},
-    tablet: { '@media': 'screen and (min-width: 768px)' } as const,
-    desktop: { '@media': 'screen and (min-width: 1024px)' } as const,
+    tablet: { '@media': 'screen and (min-width: 768px)' },
+    desktop: { '@media': 'screen and (min-width: 1024px)' },
   },
   defaultCondition: 'tablet',
   properties: {
@@ -34,7 +34,7 @@ const responsiveProperties = defineProperties({
       auto: '1 1 0%',
       initial: '0 1 0%',
       none: 'none',
-    } as const,
+    },
     flexWrap: ['wrap', 'wrap-reverse', 'nowrap'],
     position: ['static', 'fixed', 'absolute', 'relative', 'sticky'],
     textAlign,

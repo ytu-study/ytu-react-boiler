@@ -29,7 +29,7 @@ export const borderRadius = {
   /** 24px */
   '3xl': '1.5rem',
   full: '9999px',
-} as const;
+};
 
 export const shadow = {
   sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',

@@ -34,7 +34,7 @@ export const space = {
   '72': '18rem',
   '80': '20rem',
   '96': '24rem',
-} as const;
+};
 
 export const size = {
   ...space,
@@ -66,7 +66,7 @@ export const size = {
   '10/12': '83.333333%',
   '11/12': '91.666667%',
   full: '100%',
-} as const;
+};
 
 export const mediaSize = {
   '2xs': '240px',
@@ -76,4 +76,4 @@ export const mediaSize = {
   lg: '1024px',
   xl: '1440px',
   '2xl': '1920px',
-} as const;
+};

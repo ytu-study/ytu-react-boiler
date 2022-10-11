@@ -246,4 +246,4 @@ export const color = {
   rose700: '#be123c',
   rose800: '#9f1239',
   rose900: '#881337',
-} as const;
+};

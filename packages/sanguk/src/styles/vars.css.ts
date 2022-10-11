@@ -19,7 +19,7 @@ export const zIndex = {
   '40': 40,
   '50': 50,
   auto: 'auto',
-} as const;
+};
 
 export const order = {
   '0': 0,
@@ -38,22 +38,22 @@ export const order = {
   first: -9999,
   last: 9999,
   none: 0,
-} as const;
+};
 
 const content = {
   min: 'min-content',
   max: 'max-content',
   fit: 'fit-content',
-} as const;
+};
 
 export const width = {
   ...size,
   ...content,
   screen: '100vw',
-} as const;
+};
 
 export const height = {
   ...size,
   ...content,
   screen: '100vh',
-} as const;
+};
