@@ -1,4 +1,4 @@
-import { Suspense, useState, useTransition } from 'react';
+import { useState, useTransition } from 'react';
 import type { ProfileDataType } from '@/api/fetchProfileData';
 import { fetchProfileData } from '@/api/fetchProfileData';
 
@@ -38,12 +38,8 @@ interface TransitionProps {
 function ProfilePage({ resource, isPending }: ResourceProps & TransitionProps): JSX.Element {
   return (
     <div className={isPending ? 'opacity-50' : ''}>
-      <Suspense fallback={<h2>Loading Profile...</h2>}>
-        <ProfileName resource={resource} />
-        <Suspense fallback={<h2>Loading Posts...</h2>}>
-          <ProfilePosts resource={resource} />
-        </Suspense>
-      </Suspense>
+      <ProfileName resource={resource} />
+      <ProfilePosts resource={resource} />
     </div>
   );
 }

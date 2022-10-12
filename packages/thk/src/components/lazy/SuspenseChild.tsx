@@ -2,9 +2,9 @@ import React, { useState, Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import type { PropsWithChildren } from 'react';
 import classnames from 'classnames';
-import ErrorFallback from './ErrorFallback';
+import ErrorFallback from './fallback/ErrorFallback';
 import getLazyLoad from '@/utils/getLazyLoad';
-import CommonFallback from '@/components/lazy/CommonFallback';
+import CommonFallback from '@/components/lazy/fallback/CommonFallback';
 
 interface Props {
   isError?: boolean;

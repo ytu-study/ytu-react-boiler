@@ -1,3 +1,4 @@
+import ExampleDeferredValue from '@/components/lazy/ExampleDeferredValue';
 import ExampleSuspenseList from '@/components/lazy/ExampleSuspenseList';
 import ExampleTransition from '@/components/lazy/ExampleTransition';
 import ExampleUXs from '@/components/lazy/ExampleUXs';
@@ -15,6 +16,7 @@ export default function LazyPage(): JSX.Element {
       <ExampleSuspenseList />
       <ExampleTransition />
       <ExampleUXs />
+      <ExampleDeferredValue />
     </div>
   );
 }
