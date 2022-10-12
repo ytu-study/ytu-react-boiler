@@ -2,6 +2,7 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import RouterTitle from 'react-router-title';
 import HomePage from '@/pages';
 import LazyPage from '@/pages/lazy';
+import Header from '@/components/layouts/Header';
 
 interface RouterOptions {
   defaultPath?: string;

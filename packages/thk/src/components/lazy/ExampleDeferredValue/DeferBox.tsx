@@ -1,7 +1,8 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useDeferredValue } from 'react';
 
-export default function NonDeferBox(): JSX.Element {
+export default function DeferBox(): JSX.Element {
   const [input, setInput] = useState('');
+  const deferredInput = useDeferredValue(input);
 
   const boxes = useMemo(() => {
     return (
@@ -13,11 +14,11 @@ export default function NonDeferBox(): JSX.Element {
         </div>
       </>
     );
-  }, [input]);
+  }, [deferredInput]);
 
   return (
     <div>
-      <h2 className="mb-[6px] font-bold">AS-IS: Just update</h2>
+      <h2 className="mb-[6px] font-bold">TO-BE: Defer update</h2>
       <input className="mb-[10px] border-black border-[1px]" onChange={e => setInput(e.target.value)} />
       {boxes}
     </div>
