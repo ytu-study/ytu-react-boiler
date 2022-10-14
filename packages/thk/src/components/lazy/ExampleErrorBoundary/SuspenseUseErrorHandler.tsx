@@ -1,21 +1,14 @@
-import React, { useState } from 'react';
 import classnames from 'classnames';
-import { useErrorHandler } from 'react-error-boundary';
-import ErrorBoundaryContainer from './ErrorBoundaryContainer';
-import SuspenseChild from '@/components/lazy/SuspenseChild';
-import getLazyLoad from '@/utils/getLazyLoad';
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorFallback from '@/components/lazy/fallback/ErrorFallback';
+import ErrorChild from '@/components/lazy/ExampleErrorBoundary/ErrorChild';
 
 export default function SuspenseUseErrorHandler(): JSX.Element {
-  const handleError = useErrorHandler();
-
-  const triggerError = async () => {
-    await new Promise((_, rej) => rej());
-  };
-
   return (
-    <div className={classnames(`inline-flex w-[200px] h-[200px] bg-gray-200`)}>
-      <SuspenseChild color="bg-sky-500" />
-      <button onClick={triggerError}>Trigger Error</button>
+    <div className={classnames(`inline-flex flex-col justify-center items-center w-[200px] h-[200px] bg-gray-200`)}>
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <ErrorChild />
+      </ErrorBoundary>
     </div>
   );
 }

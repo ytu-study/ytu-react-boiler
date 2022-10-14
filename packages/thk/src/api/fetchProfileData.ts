@@ -57,10 +57,8 @@ function wrapPromise<T>(promise: Promise<T>): WrapPromiseResult<T> {
 }
 
 export function fetchUser(userId: number): Promise<UserType> {
-  console.log('fetch user ' + userId + '...');
   return new Promise(resolve => {
     setTimeout(() => {
-      console.log('fetched user ' + userId);
       switch (userId) {
         case 0:
           resolve({
@@ -90,10 +88,8 @@ export function fetchUser(userId: number): Promise<UserType> {
 }
 
 export function fetchPosts(userId: number): Promise<Array<PostType>> {
-  console.log('fetch posts for ' + userId + '...');
   return new Promise(resolve => {
     setTimeout(() => {
-      console.log('fetched posts for ' + userId);
       switch (userId) {
         case 0:
           resolve([

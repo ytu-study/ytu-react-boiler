@@ -1,4 +1,4 @@
-import { useState, useMemo, useDeferredValue } from 'react';
+import { useState, useMemo, Children, useDeferredValue } from 'react';
 
 export default function DeferBox(): JSX.Element {
   const [input, setInput] = useState('');
@@ -8,9 +8,11 @@ export default function DeferBox(): JSX.Element {
     return (
       <>
         <div className="border-slate-300 border-[1px] flex flex-wrap w-[505px] h-[505px]">
-          {new Array(2500).fill(null).map(() => {
-            return <span className="w-[10px] h-[10px] text-[5px] text-center text-green-800">{Math.floor(Math.random() * 100)}</span>;
-          })}
+          {Children.toArray(
+            new Array(2500).fill(null).map(() => {
+              return <span className="w-[10px] h-[10px] text-[5px] text-center text-green-800">{Math.floor(Math.random() * 100)}</span>;
+            }),
+          )}
         </div>
       </>
     );

@@ -6,7 +6,7 @@ import SuspenseChild from '@/components/lazy/SuspenseChild';
 const SuspenseWithErrorBoundary = (): ComponentType =>
   withErrorBoundary(() => <SuspenseChild isError={true} />, {
     FallbackComponent: ErrorFallback,
-    onError: (error, info) => console.log(`withErrorBoundary Error: ${error}, ${info}`),
+    // onError: (error, info) => console.log(`withErrorBoundary Error: ${error}, ${info}`),
   });
 
 export default SuspenseWithErrorBoundary();

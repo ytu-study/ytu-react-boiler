@@ -9,7 +9,7 @@ interface Props {
 
 export default function ErrorBoundaryContainer({ children, onError, onReset }: PropsWithChildren<Props>): JSX.Element {
   return (
-    <div className="inline-flex w-[200px] h-[200px] bg-gray-200">
+    <div className="flex w-[200px] h-[200px] bg-gray-200">
       <ErrorBoundary FallbackComponent={ErrorFallback} onError={onError} onReset={onReset}>
         {children}
       </ErrorBoundary>

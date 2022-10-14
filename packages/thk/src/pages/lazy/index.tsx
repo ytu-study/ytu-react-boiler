@@ -1,5 +1,6 @@
 import ExampleDeferredValue from '@/components/lazy/ExampleDeferredValue';
 import ExampleErrorBoundary from '@/components/lazy/ExampleErrorBoundary';
+import ExampleReactQuery from '@/components/lazy/ExampleReactQuery';
 import ExampleSuspenseBasic from '@/components/lazy/ExampleSuspenseBasic';
 import ExampleSuspenseList from '@/components/lazy/ExampleSuspenseList';
 import ExampleTransition from '@/components/lazy/ExampleTransition';
@@ -14,6 +15,8 @@ export default function LazyPage(): JSX.Element {
       <ExampleSuspenseList />
       <h2 className="mt-[30px] mb-[8px] text-[20px] font-bold">ExampleErrorBoundary</h2>
       <ExampleErrorBoundary />
+      <h2 className="mt-[30px] mb-[8px] text-[20px] font-bold">ExampleReactQuery</h2>
+      <ExampleReactQuery />
       <h2 className="mt-[30px] mb-[8px] text-[20px] font-bold">ExampleTransition</h2>
       <ExampleTransition />
       <h2 className="mt-[30px] mb-[8px] text-[20px] font-bold">ExampleUXs</h2>
