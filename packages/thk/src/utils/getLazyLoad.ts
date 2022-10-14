@@ -4,7 +4,7 @@ import { lazy } from 'react';
 const getLazyLoad = (path: string, time: number, isError = false): LazyExoticComponent<FunctionComponent> =>
   lazy(() =>
     new Promise((res, rej) => {
-      if (isError) setTimeout(rej, time);
+      if (isError) setTimeout(rej('Block LazyLoad!'), time);
       else setTimeout(res, time);
     }).then(() => import('../components/' + path)),
   );
