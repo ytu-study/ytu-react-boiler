@@ -3,8 +3,7 @@ import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 import { borderRadius, borderSize, shadow } from './border.css';
 import { size, space } from './size.css';
 import { fontFamily, fontSize, fontStyle, fontWeight, lineHeight } from './typography.css';
-import { height, order, overflow, textAlign, width, zIndex } from './vars.css';
-import { color } from '@/styles/baseColor.css';
+import { display, height, content, flexContent, objectFit, order, overflow, textAlign, width, zIndex, spaceContent } from './vars.css';
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -12,29 +11,23 @@ const responsiveProperties = defineProperties({
     tablet: { '@media': 'screen and (min-width: 768px)' },
     desktop: { '@media': 'screen and (min-width: 1024px)' },
   },
-  defaultCondition: 'tablet',
+  defaultCondition: 'mobile',
   properties: {
-    display: ['none', 'flex', 'block', 'inline', 'inline-flex'],
+    display,
     flexDirection: ['row', 'row-reverse', 'column', 'column-reverse'],
-    justifyContent: ['stretch', 'flex-start', 'center', 'flex-end', 'space-around', 'space-between', 'space-evenly'],
-    justifyItems: ['stretch', 'start', 'center', 'end'],
-    justifySelf: ['stretch', 'start', 'center', 'end', 'auto'],
-    alignItems: ['stretch', 'flex-start', 'center', 'flex-end', 'baseline'],
-    alignContent: ['flex-start', 'center', 'flex-end', 'space-around', 'space-between', 'space-evenly'],
-    alignSelf: ['stretch', 'flex-start', 'center', 'flex-end', 'baseline'],
-    placeContent: ['stretch', 'start', 'center', 'end', 'space-around', 'space-between', 'space-evenly'],
-    placeItems: ['stretch', 'start', 'center', 'end'],
-    placeSelf: ['stretch', 'start', 'center', 'end', 'auto'],
+    justifyContent: ['stretch', ...flexContent, ...spaceContent],
+    justifyItems: ['stretch', ...content],
+    justifySelf: ['stretch', ...content, 'auto'],
+    alignItems: ['stretch', ...flexContent, 'baseline'],
+    alignContent: [...flexContent, ...spaceContent],
+    alignSelf: ['stretch', ...flexContent, 'baseline'],
+    placeContent: ['stretch', ...content, ...spaceContent],
+    placeItems: ['stretch', ...content],
+    placeSelf: ['stretch', ...content, 'auto'],
     flexBasis: size,
-    flexGrow: [0, 1],
-    flexShrink: [0, 1],
+    flexGrow: ['0', '1'],
+    flexShrink: ['0', '1'],
     order,
-    flex: {
-      1: '1 1 0%',
-      auto: '1 1 0%',
-      initial: '0 1 0%',
-      none: 'none',
-    },
     flexWrap: ['wrap', 'wrap-reverse', 'nowrap'],
     position: ['static', 'fixed', 'absolute', 'relative', 'sticky'],
     textAlign,
@@ -59,7 +52,7 @@ const responsiveProperties = defineProperties({
     left: size,
     bottom: size,
     right: size,
-    objectFit: ['contain', 'cover', 'fill', 'none', 'scale-down'],
+    objectFit,
     pointerEvents: ['none', 'auto'],
     overflow,
     overflowX: overflow,
@@ -74,18 +67,42 @@ const responsiveProperties = defineProperties({
     cursor: ['default', 'pointer', 'not-allowed', 'text'],
   },
   shorthands: {
-    padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
-    paddingX: ['paddingLeft', 'paddingRight'],
-    paddingY: ['paddingTop', 'paddingBottom'],
-    margin: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],
-    marginX: ['marginLeft', 'marginRight'],
-    marginY: ['marginTop', 'marginBottom'],
-    placeItems: ['justifyContent', 'alignItems'],
+    w: ['width'],
+    h: ['height'],
+    wh: ['width', 'height'],
+    'min-w': ['minWidth'],
+    'min-h': ['minHeight'],
+    'max-w': ['maxWidth'],
+    'max-h': ['maxHeight'],
+    p: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
+    px: ['paddingLeft', 'paddingRight'],
+    py: ['paddingTop', 'paddingBottom'],
+    pt: ['paddingTop'],
+    pb: ['paddingBottom'],
+    pr: ['paddingRight'],
+    pl: ['paddingLeft'],
+    m: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],
+    mx: ['marginLeft', 'marginRight'],
+    my: ['marginTop', 'marginBottom'],
+    mt: ['marginTop'],
+    mb: ['marginBottom'],
+    mr: ['marginRight'],
+    ml: ['marginLeft'],
+    t: ['top'],
+    b: ['bottom'],
+    l: ['left'],
+    r: ['right'],
+    lt: ['left', 'top'],
+    rt: ['right', 'top'],
+    lb: ['left', 'bottom'],
+    rb: ['right', 'bottom'],
     inset: ['top', 'left', 'right', 'bottom'],
     insetX: ['left', 'right'],
     insetY: ['top', 'bottom'],
     gapX: ['columnGap'],
     gapY: ['rowGap'],
+    z: ['zIndex'],
+    flex: ['justifyContent', 'alignItems'],
   },
 });
 
@@ -94,14 +111,11 @@ export const darkMode = 'dark';
 
 const systemProperties = defineProperties({
   conditions: {
-    light: {},
+    light: { selector: `.${lightMode} &` },
     dark: { selector: `.${darkMode} &` },
   },
   defaultCondition: darkMode,
   properties: {
-    color: color,
-    background: color,
-    borderColor: color,
     fontFamily: fontFamily,
     fontSize: fontSize,
     fontWeight: fontWeight,
@@ -126,10 +140,10 @@ const systemProperties = defineProperties({
     roundedR: ['borderTopRightRadius', 'borderBottomRightRadius'],
     roundedB: ['borderBottomRightRadius', 'borderBottomLeftRadius'],
     roundedL: ['borderTopLeftRadius', 'borderBottomLeftRadius'],
-    roundedTL: ['borderTopLeftRadius'],
-    roundedTR: ['borderTopRightRadius'],
-    roundedBR: ['borderBottomRightRadius'],
-    roundedBL: ['borderBottomLeftRadius'],
+    roundedTl: ['borderTopLeftRadius'],
+    roundedTr: ['borderTopRightRadius'],
+    roundedBr: ['borderBottomRightRadius'],
+    roundedBl: ['borderBottomLeftRadius'],
     borderX: ['borderLeftWidth', 'borderRightWidth'],
     borderY: ['borderTopWidth', 'borderBottomWidth'],
     borderT: ['borderTopWidth'],
@@ -147,5 +161,4 @@ export const clickable = style({
   },
 });
 
-// It's a good idea to export the Sprinkles type too
 export type Sprinkles = Parameters<typeof sprinkles>[0];
