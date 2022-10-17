@@ -1,10 +1,11 @@
 import type { PropsWithChildren } from 'react';
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
+import { themeColors } from '@/styles/theme.css';
+import { Button, Header, Span } from '@/components/common';
 import { themeState } from '@/store';
-import Box from '@/components/Box';
 
-export default function Header({ children }: PropsWithChildren): JSX.Element {
+export default function Gnb({ children }: PropsWithChildren): JSX.Element {
   const [theme, setTheme] = useRecoilState(themeState);
 
   useEffect(() => {
@@ -15,10 +16,10 @@ export default function Header({ children }: PropsWithChildren): JSX.Element {
   const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
   return (
-    <Box tag="header" display="flex">
-      <Box tag="button" display="inline-flex" marginLeft="auto" paddingX="2" paddingY="2" onClick={toggleTheme}>
-        theme: {theme}
-      </Box>
-    </Box>
+    <Header display="flex">
+      <Button display="inline-flex" ml="auto" px="2" py="2" borderT="0" roundedT="full" onClick={toggleTheme}>
+        <Span backgroundColor={themeColors.main200}>theme: {theme}</Span>
+      </Button>
+    </Header>
   );
 }

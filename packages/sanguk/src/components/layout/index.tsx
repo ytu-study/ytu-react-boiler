@@ -1,14 +1,14 @@
 import { Outlet } from 'react-router-dom';
-import Box from '@/components/Box';
-import Header from '@/components/layout/header';
+import { Main } from '@/components/common';
+import Gnb from '@/components/layout/gnb';
 
 export default function Layout(): JSX.Element {
   return (
     <>
-      <Header />
-      <Box id="layout" display="flex" width="full">
+      <Gnb />
+      <Main id="layout" display="flex" width="full">
         <Outlet />
-      </Box>
+      </Main>
     </>
   );
 }
