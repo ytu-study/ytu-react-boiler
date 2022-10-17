@@ -54,7 +54,6 @@ const responsiveProperties = defineProperties({
     bottom: size,
     right: size,
     objectFit,
-    pointerEvents: ['none', 'auto'],
     overflow,
     overflowX: overflow,
     overflowY: overflow,
@@ -65,7 +64,6 @@ const responsiveProperties = defineProperties({
     },
     visibility: ['visible', 'hidden'],
     zIndex,
-    cursor: ['default', 'pointer', 'not-allowed', 'text'],
   },
   shorthands: {
     w: ['width'],
@@ -107,19 +105,8 @@ const responsiveProperties = defineProperties({
   },
 });
 
-export const lightMode = 'light';
-export const darkMode = 'dark';
-
-const systemProperties = defineProperties({
-  conditions: {
-    light: { selector: `.${lightMode} &` },
-    dark: { selector: `.${darkMode} &` },
-  },
-  defaultCondition: [lightMode, darkMode],
+const unconditionalProperties = defineProperties({
   properties: {
-    color: themeColors,
-    borderColor: themeColors,
-    backgroundColor: themeColors,
     fontFamily: fontFamily,
     fontSize: fontSize,
     fontWeight: fontWeight,
@@ -137,6 +124,8 @@ const systemProperties = defineProperties({
     borderWidth: borderSize,
     borderStyle: ['solid', 'dashed', 'dotted', 'double', 'hidden', 'none'],
     boxShadow: shadow,
+    pointerEvents: ['none', 'auto'],
+    cursor: ['default', 'pointer', 'not-allowed', 'text'],
   },
   shorthands: {
     rounded: ['borderRadius'],
@@ -157,7 +146,23 @@ const systemProperties = defineProperties({
   },
 });
 
-export const sprinkles = createSprinkles(responsiveProperties, systemProperties);
+export const lightMode = 'light';
+export const darkMode = 'dark';
+
+const colorProperties = defineProperties({
+  conditions: {
+    light: { selector: `.${lightMode} &` },
+    dark: { selector: `.${darkMode} &` },
+  },
+  defaultCondition: [lightMode, darkMode],
+  properties: {
+    color: themeColors,
+    borderColor: themeColors,
+    backgroundColor: themeColors,
+  },
+});
+
+export const sprinkles = createSprinkles(responsiveProperties, unconditionalProperties, colorProperties);
 
 export const clickable = style({
   ':hover': {
