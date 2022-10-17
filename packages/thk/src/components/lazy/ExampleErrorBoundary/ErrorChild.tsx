@@ -1,13 +1,6 @@
 import { useState } from 'react';
 import { useErrorHandler } from 'react-error-boundary';
-
-function fetchError(isError = true): Promise<string | Error> {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      return isError ? rej('API Error!') : res('No Error~');
-    }, 1000);
-  });
-}
+import { fetchError } from '@/api/fetchSimple';
 
 export default function ErrorChild(): JSX.Element {
   const [value, setValue] = useState<string>('No Value');
@@ -15,8 +8,8 @@ export default function ErrorChild(): JSX.Element {
 
   const triggerApi = async () => {
     try {
-      const res = await fetchError();
-      setValue(res);
+      const res = await fetchError(true, 'Triggered Error!');
+      setValue(res as string);
     } catch (e) {
       errorHandler(e);
     }

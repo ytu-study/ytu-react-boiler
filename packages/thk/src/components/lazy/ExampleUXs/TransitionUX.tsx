@@ -21,7 +21,7 @@ export default function TransitionUX(): JSX.Element {
       <button disabled={isPending} onClick={handleClick} className="px-[8px] py-[2px] border-black border-[1px] rounded-[4px]">
         Next
       </button>
-      <span className="ml-[10px] text-blue-500">{isPending ? 'Loading now...' : ''}</span>
+      <span className="ml-[10px] text-blue-400">{isPending ? 'Loading now...' : ''}</span>
       <ProfilePage resource={resource} isPending={isPending} />
     </div>
   );

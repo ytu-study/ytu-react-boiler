@@ -9,7 +9,7 @@ export default function SuspenseErrorBasic(): JSX.Element {
   return (
     <div className={classnames(`inline-flex w-[200px] h-[200px] bg-gray-200`)}>
       <ErrorBoundaryContainer onReset={() => setToggleError(prev => !prev)}>
-        <SuspenseChild isError={toggleError} color="bg-purple-500" />
+        <SuspenseChild isError={toggleError} color="bg-purple-400" />
       </ErrorBoundaryContainer>
     </div>
   );
