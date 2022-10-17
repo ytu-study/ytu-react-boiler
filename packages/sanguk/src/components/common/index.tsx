@@ -1,0 +1,23 @@
+import WithStyleComponent from '@/components/common/withStyleComponent';
+
+export const Div = WithStyleComponent('div');
+export const Span = WithStyleComponent('span');
+export const P = WithStyleComponent('p');
+export const Main = WithStyleComponent('main');
+export const Header = WithStyleComponent('header');
+export const Section = WithStyleComponent('section');
+export const Article = WithStyleComponent('article');
+export const Nav = WithStyleComponent('nav');
+export const Footer = WithStyleComponent('footer');
+export const H1 = WithStyleComponent('h1');
+export const H2 = WithStyleComponent('h2');
+export const H3 = WithStyleComponent('h3');
+export const H4 = WithStyleComponent('h4');
+export const H5 = WithStyleComponent('h5');
+export const H6 = WithStyleComponent('h6');
+export const Img = WithStyleComponent('img');
+export const Form = WithStyleComponent('form');
+export const Input = WithStyleComponent('input');
+export const Textarea = WithStyleComponent('textarea');
+export const A = WithStyleComponent('a');
+export const Button = WithStyleComponent('button');
