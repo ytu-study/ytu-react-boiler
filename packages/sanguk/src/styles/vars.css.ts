@@ -1,15 +1,18 @@
 import { size } from '@/styles/size.css';
 
+export const display = ['none', 'flex', 'block', 'inline', 'inline-flex'] as const;
+
 export const overflow = ['hidden', 'auto', 'clip', 'visible', 'scroll'] as const;
 
-export const textAlign = {
-  left: 'left',
-  center: 'center',
-  right: 'right',
-  justify: 'justify',
-  start: 'start',
-  end: 'end',
-} as const;
+export const textAlign = ['left', 'center', 'right', 'justify', 'start', 'end'] as const;
+
+export const objectFit = ['contain', 'cover', 'fill', 'none', 'scale-down'] as const;
+
+export const spaceContent = ['space-around', 'space-between', 'space-evenly'] as const;
+
+export const flexContent = ['flex-start', 'center', 'flex-end'] as const;
+
+export const content = ['start', 'center', 'end'] as const;
 
 export const zIndex = {
   '0': 0,
@@ -40,7 +43,7 @@ export const order = {
   none: 0,
 };
 
-const content = {
+const sizeContent = {
   min: 'min-content',
   max: 'max-content',
   fit: 'fit-content',
@@ -48,12 +51,12 @@ const content = {
 
 export const width = {
   ...size,
-  ...content,
+  ...sizeContent,
   screen: '100vw',
 };
 
 export const height = {
   ...size,
-  ...content,
+  ...sizeContent,
   screen: '100vh',
 };
