@@ -3,7 +3,8 @@ import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 import { borderRadius, borderSize, shadow } from './border.css';
 import { size, space } from './size.css';
 import { fontFamily, fontSize, fontStyle, fontWeight, lineHeight } from './typography.css';
-import { display, height, content, flexContent, objectFit, order, overflow, textAlign, width, zIndex, spaceContent } from './vars.css';
+import { content, display, flexContent, height, objectFit, order, overflow, spaceContent, textAlign, width, zIndex } from './vars.css';
+import { themeColors } from '@/styles/theme.css';
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -70,10 +71,10 @@ const responsiveProperties = defineProperties({
     w: ['width'],
     h: ['height'],
     wh: ['width', 'height'],
-    'min-w': ['minWidth'],
-    'min-h': ['minHeight'],
-    'max-w': ['maxWidth'],
-    'max-h': ['maxHeight'],
+    minW: ['minWidth'],
+    minH: ['minHeight'],
+    maxW: ['maxWidth'],
+    maxH: ['maxHeight'],
     p: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
     px: ['paddingLeft', 'paddingRight'],
     py: ['paddingTop', 'paddingBottom'],
@@ -114,8 +115,11 @@ const systemProperties = defineProperties({
     light: { selector: `.${lightMode} &` },
     dark: { selector: `.${darkMode} &` },
   },
-  defaultCondition: darkMode,
+  defaultCondition: [lightMode, darkMode],
   properties: {
+    color: themeColors,
+    borderColor: themeColors,
+    backgroundColor: themeColors,
     fontFamily: fontFamily,
     fontSize: fontSize,
     fontWeight: fontWeight,
