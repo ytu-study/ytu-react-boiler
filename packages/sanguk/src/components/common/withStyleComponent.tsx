@@ -1,27 +1,32 @@
 import classnames from 'classnames';
 import type { AllHTMLAttributes, ElementType } from 'react';
 import React from 'react';
-import { sprinkles } from '@/styles/sprinkles.css';
 import type { Sprinkles } from '@/styles/sprinkles.css';
+import { sprinkles } from '@/styles/sprinkles.css';
+import type { themeColors } from '@/styles/theme.css';
 
 type Attributes = Omit<AllHTMLAttributes<HTMLElement>, 'className' | 'content' | 'height' | 'translate' | 'color' | 'width' | 'cursor'>;
 
+type ThemeColor = typeof themeColors[keyof typeof themeColors];
+
 export interface BoxProps extends Attributes, Sprinkles {
-  tag?: ElementType;
   className?: Parameters<typeof classnames>[0];
+  color?: ThemeColor;
+  backgroundColor?: ThemeColor;
+  borderColor?: ThemeColor;
 }
 
 const atomClasses = ({
-  padding,
-  paddingX,
-  paddingY,
+  p,
+  px,
+  py,
   paddingTop,
   paddingBottom,
   paddingLeft,
   paddingRight,
-  margin,
-  marginX,
-  marginY,
+  m,
+  mx,
+  my,
   marginTop,
   marginBottom,
   marginLeft,
@@ -96,42 +101,42 @@ const atomClasses = ({
   overflowY,
   rounded,
   roundedB,
-  roundedBL,
-  roundedBR,
+  roundedBl,
+  roundedBr,
   roundedL,
   roundedR,
   roundedT,
-  roundedTL,
-  roundedTR,
+  roundedTl,
+  roundedTr,
   rowGap,
   visibility,
-  tag = 'div',
   children,
   className,
   style,
   color,
-  background,
+  backgroundColor,
+  borderColor,
   ...attrs
 }: BoxProps) => {
   return {
-    tag,
     children,
     className,
-    style,
     color,
-    background,
+    backgroundColor,
+    borderColor,
+    style,
     attrs,
     atom: sprinkles({
-      padding,
-      paddingX,
-      paddingY,
+      p,
+      px,
+      py,
       paddingTop,
       paddingBottom,
       paddingLeft,
       paddingRight,
-      margin,
-      marginX,
-      marginY,
+      m,
+      mx,
+      my,
       marginTop,
       marginBottom,
       marginLeft,
@@ -206,25 +211,32 @@ const atomClasses = ({
       overflowY,
       rounded,
       roundedB,
-      roundedBL,
-      roundedBR,
+      roundedBl,
+      roundedBr,
       roundedL,
       roundedR,
       roundedT,
-      roundedTL,
-      roundedTR,
+      roundedTl,
+      roundedTr,
       rowGap,
       visibility,
     }),
   };
 };
 
-export default function Box(props: BoxProps): JSX.Element {
-  const { tag, children, style, className, attrs, atom } = atomClasses(props);
-  return React.createElement(tag, {
-    className: classnames(className, atom),
-    style,
-    children,
-    ...attrs,
-  });
+export default function WithStyleComponent(tag: ElementType): { (props: BoxProps): JSX.Element } {
+  return (props: BoxProps) => {
+    const { children, className, color, backgroundColor, borderColor, style, attrs, atom } = atomClasses(props);
+    return React.createElement(tag, {
+      className: classnames(className, atom),
+      style: {
+        ...style,
+        color,
+        backgroundColor,
+        borderColor,
+      },
+      children,
+      ...attrs,
+    });
+  };
 }
