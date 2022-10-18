@@ -18,7 +18,7 @@ export const fontWeight = {
 
 export const fontStyle = {
   italic: 'italic',
-  'not-italic': 'normal',
+  notItalic: 'normal',
 };
 
 export const lineHeight = {
