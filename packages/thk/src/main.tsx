@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
-        <Router defaultPath="/lazy" />
+        <Router defaultPath="/validator" />
         <ReactQueryDevtools />
       </QueryClientProvider>
     </BrowserRouter>
