@@ -1,14 +1,7 @@
-type ValidatorKey = 'required' | 'minLength' | 'maxLength' | 'email' | 'KoEn';
-
-interface ValidatorValue {
-  isValid: (v: UseInputValue, ...params: number[]) => boolean;
-  errorMessage: string;
-}
-
 const Validators: { [key in ValidatorKey]?: ValidatorValue } = {
   required: {
     isValid: v => !!v,
-    errorMessage: '',
+    errorMessage: '값을 반드시 입력해주세요.',
   },
   minLength: {
     isValid: (v, l: number) => String(v).length >= l,
@@ -24,7 +17,7 @@ const Validators: { [key in ValidatorKey]?: ValidatorValue } = {
   },
   KoEn: {
     isValid: v => /^[가-힣A-Za-z]$/.test(String(v)),
-    errorMessage: '',
+    errorMessage: '한글 또는 영문만 입력해야 합니다.',
   },
 };
 

@@ -1,7 +1,12 @@
 import useInput from '../../../../../shared/hooks/useInput';
 
 export default function BaseInput(): JSX.Element {
-  const { value } = useInput({});
+  const { value, onChange, validation } = useInput({ validators: ['required', 'KoEn'] });
 
-  return <input value={value} className="px-[10px] py-[3px] border-gray border-[1px] rounded-[4px]" />;
+  return (
+    <div>
+      <input value={value} onChange={onChange} className="px-[10px] py-[3px] border-gray border-[1px] rounded-[4px]" />
+      <span className="text-orange-500">{validation.errorMessage}</span>
+    </div>
+  );
 }
