@@ -9,7 +9,7 @@
     "preinstall": "npx only-allow pnpm",
     "postinstall": "npx simple-git-hooks",
     "build": "pnpm -r build",
-    "lint": "eslint --cache --fix --ext .ts packages/**"
+    "lint": "eslint --cache --fix --ext .ts,.tsx packages"
   },
   "dependencies": {
     "react": "^18.2.0",
