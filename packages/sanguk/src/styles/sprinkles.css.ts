@@ -1,10 +1,10 @@
 import { style } from '@vanilla-extract/css';
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
+import { themeColors } from '@/styles/theme.css';
 import { borderRadius, borderSize, shadow } from './border.css';
 import { size, space } from './size.css';
 import { fontFamily, fontSize, fontStyle, fontWeight, lineHeight } from './typography.css';
 import { content, display, flexContent, height, objectFit, order, overflow, spaceContent, textAlign, width, zIndex } from './vars.css';
-import { themeColors } from '@/styles/theme.css';
 
 const responsiveProperties = defineProperties({
   conditions: {
