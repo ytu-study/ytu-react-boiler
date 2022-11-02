@@ -1,4 +1,4 @@
-import { style, createThemeContract, createTheme } from '@vanilla-extract/css';
+import { createTheme, createThemeContract, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 const vars = createThemeContract({
