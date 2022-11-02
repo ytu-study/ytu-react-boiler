@@ -1,5 +1,1 @@
-/// <reference types="vite/client" />
-
-declare interface TestType {
-  test: string;
-}
+/// <reference types="vite/client"
