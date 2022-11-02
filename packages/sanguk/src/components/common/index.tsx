@@ -21,3 +21,5 @@ export const Input = WithStyleComponent('input');
 export const Textarea = WithStyleComponent('textarea');
 export const A = WithStyleComponent('a');
 export const Button = WithStyleComponent('button');
+export const Ul = WithStyleComponent('ul');
+export const Li = WithStyleComponent('li');
